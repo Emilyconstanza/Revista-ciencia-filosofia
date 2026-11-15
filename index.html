@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ETHOS & ALGORITMO | Revista Digital — Ciencia y Filosofía (IET 1430)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="progress-bar" id="progressBar"></div>
+
+  <header class="masthead">
+    <div class="masthead-left">
+      <div class="logo">ETHOS <span>&</span> ALGORITMO</div>
+      <div class="issue-info">Edición N° 01 • Ciencia y Filosofía (IET 1430)</div>
+    </div>
+    <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">Modo Noche</button>
+  </header>
+
+  <nav class="toc-bar" aria-label="Índice de la revista">
+    <button class="active" onclick="goToPage(1)">I. Portada</button>
+    <button onclick="goToPage(2)">II. Pensar con IA</button>
+    <button onclick="goToPage(3)">III. Markus Gabriel</button>
+    <button onclick="goToPage(4)">IV. IA en el Aula</button>
+    <button onclick="goToPage(5)">V. Dilema Ético</button>
+    <button onclick="goToPage(6)">VI. Nuestra Postura</button>
+  </nav>
+
+  <main class="spread">
+
+    <!-- PÁGINA 1: PORTADA -->
+    <section id="page-1" class="page active">
+      <div class="cover-banner">
+        <div class="cover-uni">Universidad Católica de Temuco • Facultad de Ciencias Religiosas y Filosofía</div>
+        <h1 class="cover-title">¿Pensar o <em>Delegar</em>?</h1>
+        <p class="cover-deck">La autonomía humana, el pensamiento crítico y la ética contemporánea frente al auge de la inteligencia artificial en la educación.</p>
+
+        <div class="cover-art">
+          <svg viewBox="0 0 860 250" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#132640"/>
+                <stop offset="55%" stop-color="#1e3a5f"/>
+                <stop offset="100%" stop-color="#7c2d12"/>
+              </linearGradient>
+            </defs>
+            <rect width="860" height="250" fill="url(#bgGrad)"/>
+            <g stroke="rgba(255,255,255,0.16)" stroke-width="1" fill="none">
+              <circle cx="250" cy="125" r="85"/>
+              <circle cx="250" cy="125" r="55" stroke-dasharray="4 4"/>
+              <circle cx="610" cy="125" r="85"/>
+              <rect x="568" y="83" width="84" height="84" transform="rotate(45 610 125)"/>
+              <line x1="335" y1="125" x2="525" y2="125" stroke="#f59e0b" stroke-width="2"/>
+            </g>
+            <circle cx="430" cy="125" r="8" fill="#f59e0b"/>
+            <text x="250" y="121" fill="#fdfbf7" font-family="Playfair Display, serif" font-size="16" font-weight="700" text-anchor="middle">CONCIENCIA</text>
+            <text x="250" y="141" fill="#fcd34d" font-family="Plus Jakarta Sans, sans-serif" font-size="10" letter-spacing="2" text-anchor="middle">SENTIDO Y LIBERTAD</text>
+            <text x="610" y="121" fill="#fdfbf7" font-family="Playfair Display, serif" font-size="16" font-weight="700" text-anchor="middle">ALGORITMO</text>
+            <text x="610" y="141" fill="#93c5fd" font-family="Plus Jakarta Sans, sans-serif" font-size="10" letter-spacing="2" text-anchor="middle">CÁLCULO ESTADÍSTICO</text>
+            <text x="430" y="226" fill="rgba(255,255,255,0.75)" font-family="Plus Jakarta Sans, sans-serif" font-size="10" letter-spacing="3" text-anchor="middle">DOSSIER ESPECIAL • MARKUS GABRIEL & ÉTICA DE LA IA</text>
+          </svg>
+        </div>
+      </div>
+
+      <blockquote class="editorial-quote">
+        “¿Hasta qué punto el uso de la inteligencia artificial afecta el pensamiento crítico y la autonomía de los estudiantes?”
+        <cite>Pregunta Central de Investigación • Evaluación Procesual 2026</cite>
+      </blockquote>
+
+      <div class="editorial-credits">
+        <div>
+          <h4>Consejo Editorial (Integrantes)</h4>
+          <ul>
+            <li>1. [Nombre Integrante 1]</li>
+            <li>2. [Nombre Integrante 2]</li>
+            <li>3. [Nombre Integrante 3]</li>
+            <li>4. [Nombre Integrante 4]</li>
+            <li>5. [Nombre Integrante 5]</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Ficha Académica</h4>
+          <ul>
+            <li><strong>Curso:</strong> Ciencia y Filosofía: Un Diálogo Necesario (IET 1430)</li>
+            <li><strong>Docente:</strong> [Nombre del/la Docente]</li>
+            <li><strong>Autor Principal:</strong> Markus Gabriel</li>
+            <li><strong>Formato:</strong> Revista Digital Interactiva (6 Páginas)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PÁGINA 2: ¿LA IA ESTÁ CAMBIANDO NUESTRA FORMA DE PENSAR? -->
+    <section id="page-2" class="page">
+      <div class="article-header">
+        <span class="section-kicker">Sección II • Panorama Contemporáneo</span>
+        <h2>¿La IA está cambiando nuestra forma de pensar?</h2>
+      </div>
+
+      <p class="dropcap">En apenas unos años, los modelos de inteligencia artificial generativa dejaron de pertenecer a los laboratorios de computación para instalarse en el escritorio de millones de estudiantes. Hoy, redactar un ensayo, resumir un libro complejo o resolver un problema lógico puede tomar apenas unos segundos mediante una instrucción escrita en lenguaje natural.</p>
+
+      <h3>¿Qué es realmente la Inteligencia Artificial?</h3>
+      <p>Desde una perspectiva científica y epistemológica, la inteligencia artificial contemporánea —sustentada en redes neuronales profundas y grandes modelos de lenguaje (LLM)— no es una mente sintética. Es un <strong>sistema matemático de predicción estadística</strong> entrenado con millones de textos para calcular qué palabra o patrón resulta más probable frente a una consulta.</p>
+
+      <h3>Su presencia en la educación y la vida cotidiana</h3>
+      <div class="grid-2">
+        <div class="box-card info">
+          <h4>En la vida cotidiana</h4>
+          <p>Los algoritmos curan las noticias que vemos, sugieren qué consumir y optimizan nuestras búsquedas diarias, moldeando silenciosamente nuestra atención y criterios de relevancia.</p>
+        </div>
+        <div class="box-card info">
+          <h4>En el espacio educativo</h4>
+          <p>Herramientas como ChatGPT, Gemini o Copilot funcionan simultáneamente como tutores disponibles las 24 horas y como atajos tentadores para evitar el esfuerzo intelectual de leer y escribir.</p>
+        </div>
+      </div>
+
+      <p>El desafío filosófico radica en distinguir entre <strong>eficiencia técnica</strong> y <strong>comprensión genuina</strong>. Cuando delegamos sistemáticamente la tarea de estructurar ideas y formular juicios, corremos el riesgo de confundir la fluidez textual de una máquina con el desarrollo real de nuestro propio pensamiento.</p>
+    </section>
+
+    <!-- PÁGINA 3: LA MIRADA FILOSÓFICA (MARKUS GABRIEL) -->
+    <section id="page-3" class="page">
+      <div class="article-header">
+        <span class="section-kicker">Sección III • Marco Teórico y Epistemológico</span>
+        <h2>La mirada filosófica de Markus Gabriel</h2>
+      </div>
+
+      <p class="dropcap">El filósofo alemán <strong>Markus Gabriel</strong>, principal exponente del <em>Nuevo Realismo</em>, examina en obras como <em>En torno a la inteligencia artificial</em> y <em>Ética de la inteligencia artificial</em> el impacto cultural y antropológico de la automatización cognitiva. Su tesis central es contundente: la expresión "inteligencia artificial" encierra una metáfora engañosa, pues las máquinas no poseen pensamiento ni conciencia.</p>
+
+      <blockquote class="editorial-quote">
+        “La inteligencia artificial no piensa: procesa datos. Creer que un algoritmo puede reemplazar el juicio moral o la comprensión humana es confundir el cálculo con el espíritu.”
+        <cite>Enfoque filosófico de Markus Gabriel</cite>
+      </blockquote>
+
+      <h3>Conceptos clave de su propuesta filosófica</h3>
+      <div class="grid-3">
+        <div class="box-card info">
+          <h4>1. Antirreduccionismo</h4>
+          <p>El ser humano no es una computadora biológica. El pensamiento ocurre en una historia, un cuerpo y una comunidad de sentido irreductibles a código binario.</p>
+        </div>
+        <div class="box-card info">
+          <h4>2. Campos de Sentido</h4>
+          <p>Una IA manipula signos sin saber qué significan. Los humanos comprendemos intenciones, ironía, verdad y valor porque habitamos contextos reales de significado.</p>
+        </div>
+        <div class="box-card info">
+          <h4>3. Ética sobre Técnica</h4>
+          <p>El progreso tecnológico sin dirección moral no es progreso humano. La IA debe subordinarse a valores éticos universales y a la dignidad de las personas.</p>
+        </div>
+      </div>
+
+      <h3>Cuadro Comparativo: Inteligencia Humana vs. IA</h3>
+      <table class="infographic-table">
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Ser Humano (Markus Gabriel)</th>
+            <th>Inteligencia Artificial</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Modo de operar</strong></td>
+            <td>Comprende sentidos, interpreta contextos y reflexiona sobre sí mismo.</td>
+            <td>Calcula probabilidades estadísticas a partir de datos previos.</td>
+          </tr>
+          <tr>
+            <td><strong>Relación con la verdad</strong></td>
+            <td>Busca justificación racional y distingue lo verdadero de lo aparente.</td>
+            <td>Genera respuestas verosímiles, pero carece de noción de verdad.</td>
+          </tr>
+          <tr>
+            <td><strong>Dimensión ética</strong></td>
+            <td>Es un sujeto libre, autónomo y moralmente responsable de sus actos.</td>
+            <td>Es un artefacto técnico sin conciencia ni responsabilidad moral.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- PÁGINA 4: IA EN LA EDUCACIÓN -->
+    <section id="page-4" class="page">
+      <div class="article-header">
+        <span class="section-kicker">Sección IV • Ciencia, Tecnología y Aula</span>
+        <h2>IA en la educación: ¿Herramienta o muleta?</h2>
+      </div>
+
+      <p class="dropcap">En universidades y colegios, la irrupción de la inteligencia artificial ha abierto una brecha pedagógica. Utilizada con criterio epistemológico, puede enriquecer el aprendizaje; utilizada de forma acrítica, debilita las capacidades fundamentales que la educación busca cultivar: la lectura profunda, la argumentación y la autonomía intelectual.</p>
+
+      <div class="grid-2">
+        <div class="box-card good">
+          <h4>Ventajas de un uso estratégico</h4>
+          <ul>
+            <li>Permite aclarar conceptos complejos mediante ejemplos adaptados al ritmo del estudiante.</li>
+            <li>Sirve como interlocutor para detectar debilidades en un argumento propio.</li>
+            <li>Agiliza tareas mecánicas (búsqueda inicial, formato, traducción) para liberar tiempo de análisis.</li>
+          </ul>
+        </div>
+        <div class="box-card warn">
+          <h4>Riesgos de la dependencia tecnológica</h4>
+          <ul>
+            <li><strong>Atrofia del pensamiento crítico:</strong> aceptar sin cuestionar lo que entrega la pantalla.</li>
+            <li><strong>Ilusión de aprendizaje:</strong> confundir un buen texto generado por IA con comprensión personal.</li>
+            <li><strong>Alucinaciones y sesgos:</strong> incorporar datos falsos o miradas unilaterales por falta de verificación.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Casos cotidianos de estudiantes usando ChatGPT (Haz clic para desplegar)</h3>
+      <details class="study-case" open>
+        <summary>Caso A: Entregar un ensayo escrito íntegramente por IA</summary>
+        <p><strong>Lectura crítica:</strong> Aunque el estudiante obtiene una calificación, pierde el proceso formativo de investigar, dudar y articular su propia voz. Desde Gabriel, hay una renuncia voluntaria a la autodeterminación intelectual.</p>
+      </details>
+      <details class="study-case">
+        <summary>Caso B: Pedir a la IA que critique un borrador propio</summary>
+        <p><strong>Lectura crítica:</strong> El estudiante mantiene la autoría y utiliza la tecnología como espejo crítico para fortalecer sus argumentos, conservando su autonomía epistémica.</p>
+      </details>
+      <details class="study-case">
+        <summary>Caso C: Reemplazar la lectura de autores por resúmenes automáticos</summary>
+        <p><strong>Lectura crítica:</strong> Se sacrifica la riqueza conceptual y los matices filosóficos del texto original, empobreciendo el vocabulario y la capacidad de interpretación compleja.</p>
+      </details>
+    </section>
+
+    <!-- PÁGINA 5: EL DILEMA ÉTICO -->
+    <section id="page-5" class="page">
+      <div class="article-header">
+        <span class="section-kicker">Sección V • Ética Contemporánea</span>
+        <h2>El dilema ético: Autonomía y Responsabilidad</h2>
+      </div>
+
+      <h3>¿Estamos dejando de pensar por nosotros mismos?</h3>
+      <p class="dropcap">Pensar con autonomía exige detenerse, tolerar la incertidumbre y construir razones propias. Cuando la comodidad algorítmica nos acostumbra a recibir respuestas inmediatas, se debilita el hábito de la sospecha filosófica. El peligro no es que las máquinas "conquisten" a la humanidad, sino que los seres humanos abdiquemos voluntariamente de nuestra capacidad de juzgar.</p>
+
+      <h3>Pensamiento crítico y autodeterminación</h3>
+      <p>Para Markus Gabriel, la libertad humana reside en nuestra capacidad de formarnos una imagen consciente de quiénes somos y decidir bajo principios éticos. Si un estudiante delega sus decisiones argumentativas a sistemas opacos entrenados por corporaciones privadas, su autonomía intelectual queda mediada por intereses externos.</p>
+
+      <h3>Responsabilidad compartida en el ecosistema digital</h3>
+      <div class="grid-2">
+        <div class="box-card info">
+          <h4>Deber ético de los desarrolladores</h4>
+          <p>Las empresas tecnológicas tienen responsabilidad moral sobre el diseño de sus sistemas: deben garantizar transparencia, explicar sus límites, mitigar sesgos discriminatorios y proteger la privacidad y el conocimiento humano.</p>
+        </div>
+        <div class="box-card info">
+          <h4>Deber ético de los usuarios y estudiantes</h4>
+          <p>La herramienta no exime al sujeto moral. Quien estudia debe actuar con honestidad académica, transparentar el apoyo tecnológico, contrastar fuentes rigurosas y asumir autoría responsable de sus ideas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PÁGINA 6: NUESTRA POSTURA Y CONCLUSIONES -->
+    <section id="page-6" class="page">
+      <div class="article-header">
+        <span class="section-kicker">Sección VI • Síntesis y Manifiesto del Equipo</span>
+        <h2>Nuestra postura ética y conclusiones</h2>
+      </div>
+
+      <h3>Respuesta a nuestra pregunta central</h3>
+      <p class="dropcap">Frente a la pregunta <em>¿hasta qué punto el uso de la inteligencia artificial afecta el pensamiento crítico y la autonomía de los estudiantes?</em>, nuestro equipo concluye que <strong>la inteligencia artificial afecta negativamente la autonomía en la exacta medida en que sustituye el esfuerzo reflexivo del sujeto</strong>. No es un destino inevitable de la tecnología, sino el resultado de una relación pasiva y acrítica con ella.</p>
+
+      <blockquote class="editorial-quote">
+        “Defendemos una ética de la emancipación intelectual: la inteligencia artificial debe funcionar como un instrumento al servicio de la curiosidad humana, nunca como un reemplazo de nuestra conciencia crítica ni de nuestra responsabilidad moral.”
+        <cite>Postura Ética del Equipo • IET 1430</cite>
+      </blockquote>
+
+      <h3>Conclusiones principales</h3>
+      <div class="box-card info" style="margin-bottom: 1.5rem;">
+        <ul>
+          <li><strong>1. Diferencia ontológica y epistémica:</strong> Siguiendo a Markus Gabriel, la IA calcula probabilidades, mientras que el ser humano comprende sentidos y valores éticos.</li>
+          <li><strong>2. Vigilancia crítica en el aula:</strong> El uso educativo de la IA solo es legítimo cuando potencia la indagación propia y va acompañado de verificación rigurosa.</li>
+          <li><strong>3. Centralidad de la formación ética:</strong> En la era algorítmica, la filosofía resulta indispensable para recordarnos que pensar por nosotros mismos es un deber cívico y humano.</li>
+        </ul>
+      </div>
+
+      <h3>Bibliografía utilizada</h3>
+      <ul class="biblio-list">
+        <li>Gabriel, M. (2019). <em>En torno a la inteligencia artificial</em>. Barcelona: Pasado & Presente.</li>
+        <li>Gabriel, M. (2021). <em>Ética para tiempos oscuros: Valores universales para el siglo XXI</em>. Barcelona: Pasado & Presente.</li>
+        <li>Gabriel, M. (2022). <em>El sentido del pensamiento</em>. Barcelona: Pasado & Presente.</li>
+        <li>Cátedra <em>Ciencia y Filosofía: Un Diálogo Necesario (IET 1430)</em>. Material de lectura y evaluación procesual, Facultad de Ciencias Religiosas y Filosofía, Universidad Católica de Temuco (2026).</li>
+      </ul>
+    </section>
+
+    <!-- Navegación inferior de páginas -->
+    <div class="spread-footer">
+      <button class="nav-btn" id="prevBtn" onclick="changePage(-1)" disabled>← Página Anterior</button>
+      <span class="folio" id="folioText">Página 1 de 6</span>
+      <button class="nav-btn" id="nextBtn" onclick="changePage(1)">Siguiente Página →</button>
+    </div>
+
+  </main>
+
+  <footer class="colophon">
+    Revista Digital ETHOS & ALGORITMO • Universidad Católica de Temuco (IET 1430) • Publicado mediante GitHub Pages
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
