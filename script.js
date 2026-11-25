@@ -1,0 +1,40 @@
+let currentPage = 1;
+const totalPages = 6;
+
+function goToPage(pageNumber) {
+  if (pageNumber < 1 || pageNumber > totalPages) return;
+  currentPage = pageNumber;
+
+  document.querySelectorAll('.page').forEach((page, index) => {
+    page.classList.toggle('active', index + 1 === currentPage);
+  });
+
+  document.querySelectorAll('.toc-bar button').forEach((btn, index) => {
+    btn.classList.toggle('active', index + 1 === currentPage);
+  });
+
+  document.getElementById('folioText').textContent = `Página ${currentPage} de ${totalPages}`;
+  document.getElementById('prevBtn').disabled = currentPage === 1;
+  document.getElementById('nextBtn').disabled = currentPage === totalPages;
+
+  const progress = (currentPage / totalPages) * 100;
+  document.getElementById('progressBar').style.width = `${progress}%`;
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function changePage(delta) {
+  goToPage(currentPage + delta);
+}
+
+function toggleTheme() {
+  document.body.classList.toggle('dark-mode');
+  const btn = document.getElementById('themeBtn');
+  btn.textContent = document.body.classList.contains('dark-mode') ? 'Modo Día' : 'Modo Noche';
+}
+
+// Permite pasar de página también con las flechas del teclado (← y →)
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight') changePage(1);
+  if (e.key === 'ArrowLeft') changePage(-1);
+});
